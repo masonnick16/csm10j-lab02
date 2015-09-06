@@ -1,0 +1,56 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.io.FileReader;
+import java.io.PrintWriter;
+/**
+ *
+ * @author Nick Mason
+ */
+public class CH3_PrExercise1 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) throws FileNotFoundException {
+        // TODO code application logic here
+        Scanner inFile = new Scanner(new FileReader("test/inData.txt"));
+        PrintWriter outFile = new PrintWriter("test/outData.txt");
+        double length= inFile.nextDouble();
+        double width= inFile.nextDouble();
+        double radius= inFile.nextDouble();
+        String firstName=inFile.next();
+        String lastName=inFile.next();
+        int age=inFile.nextInt();
+        double bal=inFile.nextDouble();
+        double interest=inFile.nextDouble();
+        String let= inFile.next();
+        
+        outFile.println("Rectangle:");
+        outFile.print("Length = " +length+", ");
+        outFile.print("Width = " +width+", ");
+        outFile.print("Area = " +(length*width)+", ");
+        outFile.println("Perimeter = " + (width+width+length+length));
+        outFile.println(" ");
+        outFile.println("Circle:");
+        outFile.print("Radius = " +radius+", ");
+        outFile.print("Area = " +(Math.pow(radius, 2)*Math.PI)+", ");
+        outFile.println("Circumference = " + ((Math.PI*radius)+(Math.PI*radius)));
+        outFile.println(" ");
+        outFile.println("Name: "+ firstName+ " "+ lastName+", Age: "+age);
+        outFile.println("Beginning balance = $" +bal+", interest rate= "+ interest); 
+        outFile.println("Balance at teh end of the month = $" +(bal*(1+interest)));
+        outFile.println(" ");
+        outFile.print("The character that comes after A in the ASCII set is "+ let);
+        //Are we supposed to know the ASCII table and how to print out files?
+        
+        inFile.close();
+        outFile.close();
+       
+    }
+    
+}
